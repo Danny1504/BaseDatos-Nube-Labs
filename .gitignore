@@ -1,0 +1,7 @@
+# Ignorar todos los archivos 
+.env
+.env.*
+*.env
+
+# exepcion no ingorar el archivo .env.example
+!.env.example
