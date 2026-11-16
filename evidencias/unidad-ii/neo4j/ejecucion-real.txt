@@ -1,0 +1,32 @@
+Ejecucion de scripts Neo4j (datos ficticios)
+
+--- 01-crear-nodos-relaciones.cypher ---
+estudiantes
+5
+servicios
+4
+relaciones
+10
+
+--- 02-consultas.cypher ---
+servicioId, servicio, desde
+"SRV-001", "Constancia de estudios", 2026-10-01
+"SRV-003", "Asesoria de matematicas", 2026-10-03
+servicio, estudianteA, estudianteB
+"Asesoria de matematicas", "Ana Torres", "Mia Cruz"
+"Asesoria de matematicas", "Ana Torres", "Eva Solis"
+"Asesoria de matematicas", "Mia Cruz", "Eva Solis"
+"Constancia de estudios", "Ana Torres", "Luis Vega"
+"Constancia de estudios", "Ana Torres", "Eva Solis"
+"Constancia de estudios", "Luis Vega", "Eva Solis"
+"Prestamo de laboratorio", "Luis Vega", "Leo Rios"
+"Sala de estudio", "Mia Cruz", "Leo Rios"
+recomendacion, estudiantesQueLaUsan
+"Prestamo de laboratorio", 1
+"Sala de estudio", 1
+
+--- 03-actualizacion.cypher ---
+fecha, canal, satisfaccion
+2026-10-01, NULL, NULL
+fecha, canal, satisfaccion
+2026-10-01, "web", 5

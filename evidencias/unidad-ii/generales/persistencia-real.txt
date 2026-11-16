@@ -1,0 +1,32 @@
+Persistencia real tras reiniciar contenedores
+CampCloud-cassandra: healthy
+CampCloud-mongodb: healthy
+CampCloud-neo4j: healthy
+MongoDB: documentos, actualizacion y eliminacion
+test> 
+test> 
+test> ... ... ... ... ... ... ... ... ... ... {
+  missionDocumentsAfterRestart: 5,
+  updatedCapacity: {
+    _id: 'CC-SRV-003',
+    capacity: 14
+  },
+  deletedDocument: null
+}
+
+test> 
+test> 
+Neo4j: nodos y relaciones
+estudiantesPersistidos
+5
+serviciosPersistidos
+4
+relacionesPersistidas
+10
+Cassandra: eventos del estudiante EST-1001 tras eliminar el registro de prueba
+
+ eventospersistidos
+--------------------
+                  3
+
+(1 rows)

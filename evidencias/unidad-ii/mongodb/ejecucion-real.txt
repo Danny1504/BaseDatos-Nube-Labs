@@ -1,0 +1,172 @@
+Ejecucion de scripts MongoDB (datos ficticios)
+
+--- 01-crear-coleccion.js ---
+test> 
+test> 
+test> 
+test> ... ... { ok: 1 }
+test> 
+test> serviceId_1
+test> Coleccion lista: CampusCloud.servicios_extendidos_unidad_ii
+
+test> 
+test> 
+
+--- 02-insertar-documentos.js ---
+test> 
+test> ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... 
+test> 
+test> ... ... ... ... ... ... ... ... 
+test> 
+test> ... ... ... ... ... {
+  matched: 0,
+  modified: 0,
+  inserted: 6,
+  totalMissionDocuments: 6
+}
+
+test> 
+test> 
+
+--- 03-consultas-filtros.js ---
+test> 
+test> 
+test> Filtro 1: categoria academico
+
+test> ... ... ... [
+  {
+    _id: 'CC-SRV-001',
+    name: 'Constancia de estudios',
+    category: 'academico'
+  },
+  {
+    _id: 'CC-SRV-003',
+    name: 'Asesoria de matematicas',
+    category: 'academico'
+  },
+  {
+    _id: 'CC-SRV-006',
+    name: 'Convocatoria de becas',
+    category: 'academico'
+  }
+]
+
+test> 
+test> Filtro 2: modalidad digital
+
+test> ... ... ... [
+  {
+    _id: 'CC-SRV-001',
+    name: 'Constancia de estudios',
+    details: {
+      modality: 'digital'
+    }
+  },
+  {
+    _id: 'CC-SRV-006',
+    name: 'Convocatoria de becas',
+    details: {
+      modality: 'digital'
+    }
+  }
+]
+
+test> 
+test> Filtro 3: etiqueta laboratorio
+
+test> ... ... ... [
+  {
+    _id: 'CC-SRV-002',
+    name: 'Prestamo de laboratorio',
+    tags: [
+      'laboratorio',
+      'equipo'
+    ]
+  }
+]
+
+test> 
+test> 
+
+--- 04-actualizar.js ---
+test> 
+test> 
+test> 
+test> Antes:
+
+test> {
+  _id: 'CC-SRV-003',
+  capacity: 12
+}
+
+test> 
+test> ... ... ... 
+test> 
+test> {
+  matched: 1,
+  modified: 1
+}
+
+test> Despues:
+
+test> {
+  _id: 'CC-SRV-003',
+  details: {
+    modality: 'hibrida',
+    processingHours: 48,
+    lastReviewed: ISODate('2026-11-15T00:00:00.000Z')
+  },
+  capacity: 14
+}
+
+test> 
+test> 
+
+--- 05-eliminar.js ---
+test> 
+test> 
+test> 
+test> Antes:
+
+test> {
+  _id: 'CC-SRV-006',
+  name: 'Convocatoria de becas'
+}
+
+test> 
+test> 
+test> {
+  deleted: 1
+}
+
+test> 
+test> Despues:
+
+test> null
+
+test> 
+test> 
+
+--- 06-agregacion.js ---
+test> 
+test> 
+test> ... ... ... ... ... ... ... ... ... ... [
+  {
+    _id: 'academico',
+    services: 2,
+    averageCapacity: 57
+  },
+  {
+    _id: 'bienestar',
+    services: 1,
+    averageCapacity: 8
+  },
+  {
+    _id: 'instalaciones',
+    services: 2,
+    averageCapacity: 27
+  }
+]
+
+test> 
+test> 

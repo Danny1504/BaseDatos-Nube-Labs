@@ -1,0 +1,88 @@
+Ejecucion de scripts Cassandra (datos ficticios)
+
+--- 01-crear-keyspace-tabla.cql ---
+
+--- 02-insertar-eventos.cql ---
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+ [applied]
+-----------
+      True
+
+--- 03-consultas.cql ---
+
+ eventos_del_estudiante
+------------------------
+                      4
+
+(1 rows)
+
+ event_ts                        | event_id                             | service_id | event_type           | metadata
+---------------------------------+--------------------------------------+------------+----------------------+----------------------
+ 2026-10-15 14:45:00.000000+0000 | 10000000-0000-4000-8000-000000000004 |          3 |     consulta_tutoria |    {'client': 'web'}
+ 2026-10-10 11:30:00.000000+0000 | 10000000-0000-4000-8000-000000000003 |          1 | solicitud_constancia | {'client': 'mobile'}
+ 2026-10-05 10:15:00.000000+0000 | 10000000-0000-4000-8000-000000000002 |          2 |  reserva_laboratorio |    {'client': 'web'}
+ 2026-10-03 09:00:00.000000+0000 | 10000000-0000-4000-8000-000000000001 |          1 |    consulta_servicio |    {'client': 'web'}
+
+(4 rows)
+
+--- 04-actualizar.cql ---
+
+ event_ts                        | event_type                      | metadata
+---------------------------------+---------------------------------+-----------------------------------------------
+ 2026-10-10 11:30:00.000000+0000 | solicitud_constancia_confirmada | {'client': 'mobile', 'result': 'actualizada'}
+
+(1 rows)
+
+--- 05-eliminar.cql ---
+
+ event_ts                        | event_id                             | event_type
+---------------------------------+--------------------------------------+---------------------------------
+ 2026-10-10 11:30:00.000000+0000 | 10000000-0000-4000-8000-000000000003 | solicitud_constancia_confirmada
+ 2026-10-05 10:15:00.000000+0000 | 10000000-0000-4000-8000-000000000002 |             reserva_laboratorio
+ 2026-10-03 09:00:00.000000+0000 | 10000000-0000-4000-8000-000000000001 |               consulta_servicio
+
+(3 rows)
